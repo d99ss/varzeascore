@@ -6,8 +6,8 @@ from supabase import create_client
 # CONFIGURAÇÃO SUPABASE
 # =========================
 
-SUPABASE_URL = "https://hpkhpgplhmbqlumkemqi.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhwa2hwZ3BsaG1icWx1bWtlbXFpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA1NzI1NDMsImV4cCI6MjA4NjE0ODU0M30.t595OHBgdooxvi5KFSH02E2yKWGPF5xJvLxzQfptRVA"
+SUPABASE_URL = st.secrets["SUPABASE_URL"]
+SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
 
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
@@ -131,3 +131,4 @@ with st.form("add_stats_form"):
 
             st.success("Estatísticas salvas com sucesso!")
             st.rerun()
+
